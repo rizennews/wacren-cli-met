@@ -1,10 +1,13 @@
 "use client";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 import { useEffect, useState } from "react";
 
+import { useTranslations } from "next-intl";
+
 export default function CommunityPage() {
+  const t = useTranslations("Community");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -22,8 +25,8 @@ export default function CommunityPage() {
 
   const beneficiaries = [
     {
-      title: "National Meteorological & Hydrological Services",
-      desc: "Better data, better forecasts, better early warnings, with access to EUMETCast, LoRaWAN ground truth, and shared HPC resources.",
+      title: t("b1_title"),
+      desc: t("b1_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
@@ -31,8 +34,8 @@ export default function CommunityPage() {
       ),
     },
     {
-      title: "Regional Climate & Environment Agencies",
-      desc: "Shared transboundary data infrastructure enables coherent regional monitoring of river basins, ecosystems, and cross-border climate hazards.",
+      title: t("b2_title"),
+      desc: t("b2_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
@@ -41,8 +44,8 @@ export default function CommunityPage() {
       ),
     },
     {
-      title: "Agriculture Research & Development Institutions",
-      desc: "Agro-climate data pipelines support crop modelling, food system resilience research, and evidence-based advisory services for smallholders.",
+      title: t("b3_title"),
+      desc: t("b3_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22V12" />
@@ -52,8 +55,8 @@ export default function CommunityPage() {
       ),
     },
     {
-      title: "Universities & Research Institutions",
-      desc: "Researchers gain access to open datasets, HPC facilities, and collaborative platforms, enabling globally competitive climate science from within the region.",
+      title: t("b4_title"),
+      desc: t("b4_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -62,8 +65,8 @@ export default function CommunityPage() {
       ),
     },
     {
-      title: "Policymakers in Agriculture, Environment & Energy",
-      desc: "Decision-makers access coherent, evidence-based climate intelligence to underpin national adaptation plans, NDCs, and sectoral investment strategies.",
+      title: t("b5_title"),
+      desc: t("b5_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -75,8 +78,8 @@ export default function CommunityPage() {
       ),
     },
     {
-      title: "Regional & Global Climate Data Partners",
-      desc: "Institutions like EUMETSAT, EUREF, ICTP, WASCAL, and AfriGEO gain a trusted regional partner for data distribution, ground-truth collection, and capacity development.",
+      title: t("b6_title"),
+      desc: t("b6_desc"),
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
@@ -96,10 +99,10 @@ export default function CommunityPage() {
       
       <main className="pt-32 pb-20">
         <div className="container">
-          <div className="section-label">Beneficiaries</div>
-          <h1 className="section-title text-5xl mb-6">Who Benefits</h1>
+          <div className="section-label">{t("section_label")}</div>
+          <h1 className="section-title text-5xl mb-6">{t("section_title")}</h1>
           <p className="section-lead max-w-2xl mb-16">
-            CLI-MET serves a broad ecosystem of institutions whose effectiveness depends on reliable, shared climate data and infrastructure.
+            {t("section_lead")}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 interface FooterProps {
   backToTopVisible: boolean;
@@ -8,6 +9,9 @@ interface FooterProps {
 }
 
 export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Navigation");
+
   return (
     <>
       <footer id="contact">
@@ -20,9 +24,9 @@ export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
                 <span className="logo-tag">CLI-MET Programme</span>
               </div>
             </div>
-            <p className="footer-about">WACREN CLI-MET is the West and Central African Research and Education Network&apos;s regional programme for climate and meteorological infrastructure, building the digital backbone for a climate-resilient Africa.</p>
+            <p className="footer-about">{t("about")}</p>
             <div className="footer-attribution">
-              The WACREN CLI-MET Program is supported by the AfricaConnect Project co-funded by the European Union through the Global Gateway Program.
+              {t("attribution")}
             </div>
 
             <div className="footer-social">
@@ -45,32 +49,32 @@ export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
             </div>
           </div>
           <div>
-            <div className="footer-col-title">Programme</div>
+            <div className="footer-col-title">{t("programme")}</div>
             <ul className="footer-links">
-              <li><Link href="/#home">CLI-MET</Link></li>
-              <li><Link href="/#pillars">Pillars</Link></li>
-              <li><Link href="/community">Community</Link></li>
-              <li><Link href="/#flagship">Activities</Link></li>
-              <li><Link href="/impact">Impact</Link></li>
+              <li><Link href="/#home">{tNav("climet")}</Link></li>
+              <li><Link href="/#pillars">{tNav("pillars")}</Link></li>
+              <li><Link href="/community">{tNav("community")}</Link></li>
+              <li><Link href="/#flagship">{tNav("activities")}</Link></li>
+              <li><Link href="/impact">{tNav("impact")}</Link></li>
             </ul>
           </div>
           <div>
-            <div className="footer-col-title">Alignment</div>
+            <div className="footer-col-title">{t("alignment")}</div>
             <ul className="footer-links">
-              <li><Link href="/#alignment">Strategic Alignment</Link></li>
+              <li><Link href="/#alignment">{t("alignment")}</Link></li>
               <li><a href="#">AfricaConnect4</a></li>
             </ul>
           </div>
           <div>
-            <div className="footer-col-title">Get Involved</div>
+            <div className="footer-col-title">{t("get_involved")}</div>
             <ul className="footer-links">
-              <li><Link href="/contact">Partner with us</Link></li>
+              <li><Link href="/contact">{tNav("partner")}</Link></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <span>© WACREN. West and Central African Research and Education Network, Climate &amp; Meteorology Programme (CLI-MET)</span>
+            <span>{t("copyright")}</span>
           </div>
         </div>
       </footer>

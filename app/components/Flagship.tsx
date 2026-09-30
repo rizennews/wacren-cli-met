@@ -1,17 +1,21 @@
+import { useTranslations } from "next-intl";
+
 export default function Flagship() {
+  const t = useTranslations("Flagship");
+
   const activities = [
-    { num: "I", title: "EUMETCast Terrestrial Data Portal Deployment & Training", desc: "Deploying and operationalising terrestrial EUMETCast receiving stations at National Meteorological and Hydrological Services, and providing training to ensure effective use of satellite-derived Earth Observation data across the WACREN region.", tag: "Satellite · Data Access" },
-    { num: "II", title: "Open Climate & Agriculture Data Design Sprints", desc: "Collaborative design sprints co-organised with EUMETSAT, WASCAL, ICTP, RUFORUM, and AfriGEO, bringing together meteorologists, agronomists, data scientists, and policymakers to develop open, actionable climate and agricultural data products for the region.", tag: "Agriculture · Open Data" },
-    { num: "III", title: "Regional Climate Research Connectivity & HPC Integration", desc: "Connecting national and regional climate research centres to high-performance computing infrastructure through WACREN's high-speed backbone, enabling regional climate modelling, seasonal forecasting, and shared computing resources for complex climate simulations.", tag: "HPC · Connectivity" },
-    { num: "IV", title: "IoT & WMO-Compliant Environmental Monitoring Station Network", desc: "Deployment of LoRaWAN-enabled, WMO-compliant automatic weather and environmental monitoring stations at WACREN-connected institutions, producing continuous, ground-truth observations that feed regional climate platforms.", tag: "IoT · Weather Stations" },
+    { num: "I", title: t("a1_title"), desc: t("a1_desc"), tag: t("a1_tag") },
+    { num: "II", title: t("a2_title"), desc: t("a2_desc"), tag: t("a2_tag") },
+    { num: "III", title: t("a3_title"), desc: t("a3_desc"), tag: t("a3_tag") },
+    { num: "IV", title: t("a4_title"), desc: t("a4_desc"), tag: t("a4_tag") },
   ];
 
   return (
     <section id="flagship">
       <div className="container">
-        <div className="section-label">Flagship Activities</div>
-        <h2 className="section-title">Activities</h2>
-        <p className="section-lead">Concrete, partner-supported activities that bring the CLI-MET vision to life, producing tangible outcomes for the region.</p>
+        <div className="section-label">{t("section_label")}</div>
+        <h2 className="section-title">{t("section_title")}</h2>
+        <p className="section-lead">{t("section_lead")}</p>
         <div className="flagship-list">
           {activities.map((f, i) => (
             <div key={i} className="flagship-item">

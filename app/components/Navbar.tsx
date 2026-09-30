@@ -1,7 +1,7 @@
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link, usePathname } from '@/i18n/routing';
 
 interface NavbarProps {
   mobileMenuOpen: boolean;
@@ -10,6 +10,8 @@ interface NavbarProps {
 
 export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) {
   const pathname = usePathname();
+  const t = useTranslations('Navigation');
+  const locale = useLocale();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -42,20 +44,31 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
           {/* Desktop nav links */}
           <nav aria-label="Main navigation" className="nav-desktop">
             <ul className="nav-links">
-               <li><Link href="/#home" className={isActive('/') ? 'active' : ''}>CLI-MET</Link></li>
-              <li><Link href="/#pillars">PILLARS</Link></li>
-              <li><Link href="/#flagship">ACTIVITIES</Link></li>
+               <li><Link href="/#home" className={isActive('/') ? 'active' : ''}>{t('climet')}</Link></li>
+              <li><Link href="/#pillars">{t('pillars')}</Link></li>
+              <li><Link href="/#flagship">{t('activities')}</Link></li>
               
               <li className="nav-divider-v"></li>
 
-               <li><Link href="/community" className={isActive('/community') ? 'active' : ''}>COMMUNITY</Link></li>
-              <li><Link href="/precursor" className={isActive('/precursor') ? 'active' : ''}>PRECURSOR</Link></li>
-              <li><Link href="/impact" className={isActive('/impact') ? 'active' : ''}>IMPACT</Link></li>
+               <li><Link href="/community" className={isActive('/community') ? 'active' : ''}>{t('community')}</Link></li>
+              <li><Link href="/precursor" className={isActive('/precursor') ? 'active' : ''}>{t('precursor')}</Link></li>
+              <li><Link href="/impact" className={isActive('/impact') ? 'active' : ''}>{t('impact')}</Link></li>
             </ul>
           </nav>
 
           <div className="nav-actions">
-            <Link href="/contact" className="nav-cta">PARTNER WITH US</Link>
+            <div className="language-switcher" style={{ display: 'flex', gap: '8px', marginRight: '16px', alignItems: 'center' }}>
+              <Link href={pathname} locale="en" style={{ textDecoration: 'none', opacity: locale === 'en' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="24" alt="English" style={{ borderRadius: '2px', display: 'block' }} />
+              </Link>
+              <Link href={pathname} locale="fr" style={{ textDecoration: 'none', opacity: locale === 'fr' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="24" alt="Français" style={{ borderRadius: '2px', display: 'block' }} />
+              </Link>
+              <Link href={pathname} locale="pt" style={{ textDecoration: 'none', opacity: locale === 'pt' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="24" alt="Português" style={{ borderRadius: '2px', display: 'block' }} />
+              </Link>
+            </div>
+            <Link href="/contact" className="nav-cta">{t('partner')}</Link>
             <button 
               className="nav-hamburger" 
               id="hamburger" 
@@ -84,20 +97,32 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
       {/* Mobile menu dropdown */}
       <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`} aria-hidden={!mobileMenuOpen}>
         <div className="mobile-menu-links">
-          <Link href="/#home" className={`mobile-menu-link ${isActive('/') ? 'active' : ''}`} onClick={closeMobileMenu}>CLI-MET</Link>
-          <Link href="/#pillars" className="mobile-menu-link" onClick={closeMobileMenu}>PILLARS</Link>
-          <Link href="/#flagship" className="mobile-menu-link" onClick={closeMobileMenu}>ACTIVITIES</Link>
+          <Link href="/#home" className={`mobile-menu-link ${isActive('/') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('climet')}</Link>
+          <Link href="/#pillars" className="mobile-menu-link" onClick={closeMobileMenu}>{t('pillars')}</Link>
+          <Link href="/#flagship" className="mobile-menu-link" onClick={closeMobileMenu}>{t('activities')}</Link>
           <div className="mobile-menu-divider"></div>
-          <Link href="/community" className={`mobile-menu-link ${isActive('/community') ? 'active' : ''}`} onClick={closeMobileMenu}>COMMUNITY</Link>
-          <Link href="/precursor" className={`mobile-menu-link ${isActive('/precursor') ? 'active' : ''}`} onClick={closeMobileMenu}>PRECURSOR</Link>
-          <Link href="/impact" className={`mobile-menu-link ${isActive('/impact') ? 'active' : ''}`} onClick={closeMobileMenu}>IMPACT</Link>
+          <Link href="/community" className={`mobile-menu-link ${isActive('/community') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('community')}</Link>
+          <Link href="/precursor" className={`mobile-menu-link ${isActive('/precursor') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('precursor')}</Link>
+          <Link href="/impact" className={`mobile-menu-link ${isActive('/impact') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('impact')}</Link>
         </div>
         <div className="mobile-menu-footer">
+          <div className="language-switcher-mobile" style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '16px', alignItems: 'center' }}>
+              <Link href={pathname} locale="en" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'en' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="28" alt="English" style={{ borderRadius: '3px', display: 'block' }} />
+              </Link>
+              <Link href={pathname} locale="fr" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'fr' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="28" alt="Français" style={{ borderRadius: '3px', display: 'block' }} />
+              </Link>
+              <Link href={pathname} locale="pt" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'pt' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
+                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="28" alt="Português" style={{ borderRadius: '3px', display: 'block' }} />
+              </Link>
+          </div>
           <Link href="/contact" className="mobile-menu-cta" onClick={closeMobileMenu}>
-            PARTNER WITH US
+            {t('partner')}
           </Link>
         </div>
       </div>
     </>
   );
 }
+

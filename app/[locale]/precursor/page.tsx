@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+
+import { useTranslations } from "next-intl";
 
 export default function PrecursorPage() {
+  const t = useTranslations("Precursor");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [backToTopVisible, setBackToTopVisible] = useState(false);
 
@@ -51,23 +54,23 @@ export default function PrecursorPage() {
 
   const precursorLinks = [
     {
-      title: "WACREN Climate Programme: Catalysing Climate Solutions",
-      description: "Initial description, justification and partnerships for the WACREN CLI-MET programme",
+      title: t("p1_title"),
+      description: t("p1_desc"),
       url: "https://wacren.net/en/newsletter/wacren-climate-programme-catalysing-climate-solutions/",
     },
     {
-      title: "WACREN-ICTP-OAU Collaboration at Ile-Ife Nigeria",
-      description: "Collaborating to conduct real-time monitoring of surface water pollution using IoT-based sensors",
+      title: t("p2_title"),
+      description: t("p2_desc"),
       url: "https://indico.wacren.net/event/207/contributions/1729/subcontributions/38/attachments/686/977/REGIONAL%20ACTIVITIES%20OF%20THE%20WACREN-ICTP%20PROGRAMME%20.pdf",
     },
     {
-      title: "WACREN-ITCP Collaboration with GMet and GARNET",
-      description: "A workshop as part of a developing program to boost the deployment of sensor networks and LoraWAN gateways in WACREN NRENs for climate and weather research support services",
+      title: t("p3_title"),
+      description: t("p3_desc"),
       url: "https://indico.wacren.net/event/160/",
     },
     {
-      title: "AfricaConnect Meeting and Workshop on IoT-Based Acquisition of Research Data for Scientific Computing",
-      description: "An activity designed to introduce IT staff, engineers and scientists from Research and Education Networks (RENs) in the Africa to operating a network-wide service for the scientific application of Internet of Things (IoT) sensors and technology.",
+      title: t("p4_title"),
+      description: t("p4_desc"),
       url: "https://indico.ictp.it/event/10787/overview",
     },
   ];
@@ -80,10 +83,10 @@ export default function PrecursorPage() {
         {/* Content Section */}
         <section style={{ padding: "100px 0" }}>
           <div className="container">
-            <div className="section-label" style={{ marginBottom: "12px" }}>Precursor Phase</div>
-            <h2 className="section-title" style={{ marginBottom: "8px" }}>Growing Collaborations, Partnerships and Activities</h2>
+            <div className="section-label" style={{ marginBottom: "12px" }}>{t("section_label")}</div>
+            <h2 className="section-title" style={{ marginBottom: "8px" }}>{t("section_title")}</h2>
             <p className="section-lead" style={{ width: "100%", margin: "0 0 30px 0", textAlign: "left" }}>
-              The precursor phase established a foundation of national and regional collaborations and partnerships serving as building blocks and leading up to the current phase of the CLI-MET programme.
+              {t("section_lead")}
             </p>
             <div className="precursor-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(280px, 1fr))", gap: "32px" }}>
               {precursorLinks.map((item, idx) => (
@@ -122,7 +125,7 @@ export default function PrecursorPage() {
                         fontSize: "14px",
                       }}
                     >
-                      Learn more
+                      {t("learn_more")}
                       <span aria-hidden="true">↗</span>
                     </span>
                   </div>

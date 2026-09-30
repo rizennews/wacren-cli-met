@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import WhyItMatters from "./components/WhyItMatters";
-import Pillars from "./components/Pillars";
-import Flagship from "./components/Flagship";
-import Alignment from "./components/Alignment";
-import Footer from "./components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Hero from "@/app/components/Hero";
+import WhyItMatters from "@/app/components/WhyItMatters";
+import Pillars from "@/app/components/Pillars";
+import Flagship from "@/app/components/Flagship";
+import Alignment from "@/app/components/Alignment";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

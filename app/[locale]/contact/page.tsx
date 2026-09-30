@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Link from "next/link";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
+  const t = useTranslations("Contact");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [backToTopVisible, setBackToTopVisible] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
@@ -67,19 +68,19 @@ export default function ContactPage() {
             {/* Left Column: Info */}
             <div className="contact-info">
               <div className="contact-info-header">
-                <h1 className="contact-title">Get in touch</h1>
+                <h1 className="contact-title">{t("title")}</h1>
                 <p className="contact-subtitle">
-                  We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+                  {t("subtitle")}
                 </p>
               </div>
 
               <div className="contact-details">
                 <div className="contact-detail-item">
-                  <h3>Accra, Ghana</h3>
-                  <p>West and Central African Research and Education Network</p>
-                  <p><span className="label">Address:</span> <a href="https://www.google.com/maps?sca_esv=df890eccffbfa804&aep=1&prmd=ivns&sxsrf=ANbL-n6VizXt2phx2HBO7wpgIw0HEcgfPA:1773331859691&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3jljrY5CkLlk8Dq3IvwBz-R5R-93bnJN-gfJetFY0A5M6NANLPFEQzj1dcFq3LKKBXHVoOgyWf6JqUwGOohIri1ZbKlIdZIYLCoWCcgdvvLUCGHg9yRK_YDxJ9L6Z2ZB_2aQaHCOnhTyYCnPFqsoOfSnoVwLX5ZQJDHa7zyZ3qmdVvO99Q&biw=1536&bih=742&dpr=1.25&um=1&ie=UTF-8&fb=1&gl=gh&sa=X&geocode=KZfUp8nwm98PMY5U-qS4GZJg&daddr=VCG+Office+Complex,+IPS+Rd,+Accra" target="_blank" rel="noopener" style={{ color: 'inherit', textDecoration: 'underline' }}>VCG Office Complex, IPS Rd, Accra</a></p>
+                  <h3>{t("accra")}</h3>
+                  <p>{t("wacren")}</p>
+                  <p><span className="label">{t("address")}</span> <a href="https://www.google.com/maps?sca_esv=df890eccffbfa804&aep=1&prmd=ivns&sxsrf=ANbL-n6VizXt2phx2HBO7wpgIw0HEcgfPA:1773331859691&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3jljrY5CkLlk8Dq3IvwBz-R5R-93bnJN-gfJetFY0A5M6NANLPFEQzj1dcFq3LKKBXHVoOgyWf6JqUwGOohIri1ZbKlIdZIYLCoWCcgdvvLUCGHg9yRK_YDxJ9L6Z2ZB_2aQaHCOnhTyYCnPFqsoOfSnoVwLX5ZQJDHa7zyZ3qmdVvO99Q&biw=1536&bih=742&dpr=1.25&um=1&ie=UTF-8&fb=1&gl=gh&sa=X&geocode=KZfUp8nwm98PMY5U-qS4GZJg&daddr=VCG+Office+Complex,+IPS+Rd,+Accra" target="_blank" rel="noopener" style={{ color: 'inherit', textDecoration: 'underline' }}>VCG Office Complex, IPS Rd, Accra</a></p>
                   <p>
-                    <span className="label">Phone:</span>{" "}
+                    <span className="label">{t("phone")}</span>{" "}
                     {showPhone ? (
                       <a href={`tel:${['030', '294', '2873'].join('')}`} style={{ color: 'var(--navy)', fontWeight: '600' }}>
                         {['030', '294', '2873'].join(' ')}
@@ -89,12 +90,12 @@ export default function ContactPage() {
                         onClick={() => setShowPhone(true)} 
                         style={{ border: 'none', background: 'rgba(0,102,204,0.1)', color: 'var(--navy)', padding: '2px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
                       >
-                        Click to view phone
+                        {t("click_phone")}
                       </button>
                     )}
                   </p>
                   <p>
-                    <span className="label">Email:</span>{" "}
+                    <span className="label">{t("email")}</span>{" "}
                     {showEmail ? (
                       <a href={`mailto:${['climet', 'wacren.net'].join('@')}`} style={{ color: 'var(--navy)', fontWeight: '600' }}>
                         {['climet', 'wacren.net'].join('@')}
@@ -104,7 +105,7 @@ export default function ContactPage() {
                         onClick={() => setShowEmail(true)} 
                         style={{ border: 'none', background: 'rgba(0,102,204,0.1)', color: 'var(--navy)', padding: '2px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
                       >
-                        Click to reveal email
+                        {t("click_email")}
                       </button>
                     )}
                   </p>
@@ -125,17 +126,17 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <p className="form-alert-text">
-                    Digital form submissions are currently offline during system maintenance. For immediate assistance, please connect with us directly at <a href="mailto:climet@wacren.net">climet@wacren.net</a> or use the contact information provided on the left.
+                    {t("alert")}
                   </p>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">{t("name_label")}</label>
                   <input 
                     type="text" 
                     id="name" 
                     name="name" 
-                    placeholder="Jane Smith" 
+                    placeholder={t("name_ph")} 
                     className="form-input"
                     value={formState.name}
                     onChange={handleChange}
@@ -144,12 +145,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">{t("email_label")}</label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email" 
-                    placeholder="jane@company.com" 
+                    placeholder={t("email_ph")} 
                     className="form-input"
                     value={formState.email}
                     onChange={handleChange}
@@ -158,12 +159,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                  <label htmlFor="phone">{t("phone_label")}</label>
                   <input 
                     type="tel" 
                     id="phone" 
                     name="phone" 
-                    placeholder="+1 (555) 555-1234" 
+                    placeholder={t("phone_ph")} 
                     className="form-input"
                     value={formState.phone}
                     onChange={handleChange}
@@ -172,12 +173,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="company">Company Name</label>
+                  <label htmlFor="company">{t("company_label")}</label>
                   <input 
                     type="text" 
                     id="company" 
                     name="company" 
-                    placeholder="Your Company" 
+                    placeholder={t("company_ph")} 
                     className="form-input"
                     value={formState.company}
                     onChange={handleChange}
@@ -186,11 +187,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="form-group" style={{ marginBottom: '32px' }}>
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">{t("message_label")}</label>
                   <textarea 
                     id="message" 
                     name="message" 
-                    placeholder="Tell us about your project or how we can help you..." 
+                    placeholder={t("message_ph")} 
                     className="form-input form-textarea"
                     value={formState.message}
                     onChange={handleChange}
@@ -199,7 +200,7 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" className="btn-submit" disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>
-                  Form Submissions Temporarily Unavailable
+                  {t("submit")}
                 </button>
               </form>
             </div>

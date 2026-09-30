@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Impact from "../components/Impact";
-import SDGs from "../components/SDGs";
-import Footer from "../components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Impact from "@/app/components/Impact";
+import SDGs from "@/app/components/SDGs";
+import Footer from "@/app/components/Footer";
 
 export default function ImpactPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
