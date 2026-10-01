@@ -52,10 +52,9 @@ export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
             <div className="footer-col-title">{t("programme")}</div>
             <ul className="footer-links">
               <li><Link href="/#home">{tNav("climet")}</Link></li>
-              <li><Link href="/#pillars">{tNav("pillars")}</Link></li>
+              <li><Link href="/activities">{tNav("activities")}</Link></li>
               <li><Link href="/community">{tNav("community")}</Link></li>
-              <li><Link href="/#flagship">{tNav("activities")}</Link></li>
-              <li><Link href="/impact">{tNav("impact")}</Link></li>
+              <li><Link href="/climb-champions">{tNav("champions")}</Link></li>
             </ul>
           </div>
           <div>

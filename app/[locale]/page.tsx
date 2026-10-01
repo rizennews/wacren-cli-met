@@ -5,7 +5,6 @@ import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import WhyItMatters from "@/app/components/WhyItMatters";
 import Pillars from "@/app/components/Pillars";
-import Flagship from "@/app/components/Flagship";
 import Alignment from "@/app/components/Alignment";
 import Footer from "@/app/components/Footer";
 
@@ -75,7 +74,6 @@ export default function Home() {
       <Hero />
       <WhyItMatters />
       <Pillars />
-      <Flagship />
       <Alignment />
       
       <Footer 

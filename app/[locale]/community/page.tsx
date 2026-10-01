@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 
 export default function CommunityPage() {
   const t = useTranslations("Community");
+  const tNav = useTranslations("Navigation");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -97,10 +98,26 @@ export default function CommunityPage() {
         setMobileMenuOpen={setMobileMenuOpen} 
       />
       
-      <main className="pt-32 pb-20">
-        <div className="container">
+      <main className="pb-20">
+        {/* Community Hero */}
+        <div className="hero" style={{ minHeight: "auto", display: "flex", alignItems: "center", paddingTop: "120px", paddingBottom: "40px" }}>
+          <div className="hero-canvas"></div>
+          <div className="hero-noise"></div>
+          <div className="hero-content">
+            <div>
+              <h1 className="fade-up delay-1 capitalize" style={{ fontSize: "clamp(40px, 6vw, 64px)", lineHeight: 1.1, textTransform: "capitalize" }}>
+                {tNav("community").toLowerCase()}
+              </h1>
+              <p className="hero-desc fade-up delay-2" style={{ marginTop: "24px", fontSize: "1.1rem", opacity: 0.85 }}>
+                Meet the communities benefitting from our climate initiatives.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container" style={{ paddingTop: "60px" }}>
           <div className="section-label">{t("section_label")}</div>
-          <h1 className="section-title text-5xl mb-6">{t("section_title")}</h1>
+          <h2 className="section-title text-5xl mb-6">{t("section_title")}</h2>
           <p className="section-lead max-w-2xl mb-16">
             {t("section_lead")}
           </p>

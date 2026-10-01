@@ -44,20 +44,15 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
           {/* Desktop nav links */}
           <nav aria-label="Main navigation" className="nav-desktop">
             <ul className="nav-links">
-               <li><Link href="/#home" className={isActive('/') ? 'active' : ''}>{t('climet')}</Link></li>
-              <li><Link href="/#pillars">{t('pillars')}</Link></li>
-              <li><Link href="/#flagship">{t('activities')}</Link></li>
-              
-              <li className="nav-divider-v"></li>
-
-               <li><Link href="/community" className={isActive('/community') ? 'active' : ''}>{t('community')}</Link></li>
-              <li><Link href="/precursor" className={isActive('/precursor') ? 'active' : ''}>{t('precursor')}</Link></li>
-              <li><Link href="/impact" className={isActive('/impact') ? 'active' : ''}>{t('impact')}</Link></li>
+              <li><Link href="/#home" className={isActive('/') ? 'active' : ''}>{t('climet')}</Link></li>
+              <li><Link href="/activities" className={isActive('/activities') ? 'active' : ''}>{t('activities')}</Link></li>
+              <li><Link href="/community" className={isActive('/community') ? 'active' : ''}>{t('community')}</Link></li>
+              <li><Link href="/climb-champions" className={isActive('/climb-champions') ? 'active' : ''}>{t('champions')}</Link></li>
             </ul>
           </nav>
 
           <div className="nav-actions">
-            <div className="language-switcher" style={{ display: 'flex', gap: '8px', marginRight: '16px', alignItems: 'center' }}>
+            <div className="language-switcher hidden md:flex" style={{ gap: '8px', marginRight: '16px', alignItems: 'center' }}>
               <Link href={pathname} locale="en" style={{ textDecoration: 'none', opacity: locale === 'en' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
                 <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="24" alt="English" style={{ borderRadius: '2px', display: 'block' }} />
               </Link>
@@ -98,12 +93,9 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
       <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`} aria-hidden={!mobileMenuOpen}>
         <div className="mobile-menu-links">
           <Link href="/#home" className={`mobile-menu-link ${isActive('/') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('climet')}</Link>
-          <Link href="/#pillars" className="mobile-menu-link" onClick={closeMobileMenu}>{t('pillars')}</Link>
-          <Link href="/#flagship" className="mobile-menu-link" onClick={closeMobileMenu}>{t('activities')}</Link>
-          <div className="mobile-menu-divider"></div>
+          <Link href="/activities" className={`mobile-menu-link ${isActive('/activities') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('activities')}</Link>
           <Link href="/community" className={`mobile-menu-link ${isActive('/community') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('community')}</Link>
-          <Link href="/precursor" className={`mobile-menu-link ${isActive('/precursor') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('precursor')}</Link>
-          <Link href="/impact" className={`mobile-menu-link ${isActive('/impact') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('impact')}</Link>
+          <Link href="/climb-champions" className={`mobile-menu-link ${isActive('/climb-champions') ? 'active' : ''}`} onClick={closeMobileMenu}>{t('champions')}</Link>
         </div>
         <div className="mobile-menu-footer">
           <div className="language-switcher-mobile" style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '16px', alignItems: 'center' }}>

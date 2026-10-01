@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/Navbar";
+import Flagship from "@/app/components/Flagship";
 import Footer from "@/app/components/Footer";
-
 import { useTranslations } from "next-intl";
 
-export default function PrecursorPage() {
-  const t = useTranslations("Precursor");
+export default function ActivitiesPage() {
+  const tPrecursor = useTranslations("Precursor");
+  const tNav = useTranslations("Navigation");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [backToTopVisible, setBackToTopVisible] = useState(false);
 
@@ -23,7 +24,7 @@ export default function PrecursorPage() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -37,10 +38,11 @@ export default function PrecursorPage() {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => {
+    document.querySelectorAll(".reveal, .flagship-item").forEach((el) => {
       (el as HTMLElement).style.opacity = "0";
       (el as HTMLElement).style.transform = "translateY(30px)";
-      (el as HTMLElement).style.transition = "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+      (el as HTMLElement).style.transition =
+        "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
       obs.observe(el);
     });
 
@@ -54,32 +56,32 @@ export default function PrecursorPage() {
 
   const precursorLinks = [
     {
-      title: t("p1_title"),
-      description: t("p1_desc"),
+      title: tPrecursor("p1_title"),
+      description: tPrecursor("p1_desc"),
       url: "https://wacren.net/en/newsletter/wacren-climate-programme-catalysing-climate-solutions/",
       num: "01",
       className: "p1",
       icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" /></svg>,
     },
     {
-      title: t("p2_title"),
-      description: t("p2_desc"),
+      title: tPrecursor("p2_title"),
+      description: tPrecursor("p2_desc"),
       url: "https://indico.wacren.net/event/207/contributions/1729/subcontributions/38/attachments/686/977/REGIONAL%20ACTIVITIES%20OF%20THE%20WACREN-ICTP%20PROGRAMME%20.pdf",
       num: "02",
       className: "p2",
       icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>,
     },
     {
-      title: t("p3_title"),
-      description: t("p3_desc"),
+      title: tPrecursor("p3_title"),
+      description: tPrecursor("p3_desc"),
       url: "https://indico.wacren.net/event/160/",
       num: "03",
       className: "p3",
       icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" /><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" /><circle cx="12" cy="12" r="2" /><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" /><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" /></svg>,
     },
     {
-      title: t("p4_title"),
-      description: t("p4_desc"),
+      title: tPrecursor("p4_title"),
+      description: tPrecursor("p4_desc"),
       url: "https://indico.ictp.it/event/10787/overview",
       num: "04",
       className: "p4",
@@ -90,15 +92,38 @@ export default function PrecursorPage() {
   return (
     <>
       <Navbar mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-      
-      <main className="precursor-page" style={{ paddingTop: "100px", minHeight: "100vh", background: "var(--bg-white)" }}>
-        {/* Content Section */}
-        <section style={{ padding: "100px 0" }}>
+
+      <main style={{ minHeight: "100vh" }}>
+        {/* Activities Hero */}
+        <div className="hero" style={{ minHeight: "auto", display: "flex", alignItems: "center", paddingTop: "120px", paddingBottom: "40px" }}>
+          <div className="hero-canvas"></div>
+          <div className="hero-noise"></div>
+          <div className="hero-content">
+            <div>
+              <h1 className="fade-up delay-1 capitalize" style={{ fontSize: "clamp(40px, 6vw, 64px)", lineHeight: 1.1, textTransform: "capitalize" }}>
+                {tNav("activities").toLowerCase()}
+              </h1>
+              <p className="hero-desc fade-up delay-2" style={{ marginTop: "24px", fontSize: "1.1rem", opacity: 0.85 }}>
+                Explore our flagship and precursor initiatives.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Exactly Flagship Activities UI */}
+        <Flagship />
+
+        {/* Exactly Precursor Section UI */}
+        <section id="precursor" style={{ padding: "100px 0", background: "var(--bg-white, white)" }}>
           <div className="container">
-            <div className="section-label" style={{ marginBottom: "12px" }}>{t("section_label")}</div>
-            <h2 className="section-title" style={{ marginBottom: "8px" }}>{t("section_title")}</h2>
+            <div className="section-label" style={{ marginBottom: "12px" }}>
+              {tPrecursor("section_label")}
+            </div>
+            <h2 className="section-title" style={{ marginBottom: "8px" }}>
+              {tPrecursor("section_title")}
+            </h2>
             <p className="section-lead" style={{ width: "100%", margin: "0 0 30px 0", textAlign: "left" }}>
-              {t("section_lead")}
+              {tPrecursor("section_lead")}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {precursorLinks.map((item, idx) => (
@@ -133,7 +158,7 @@ export default function PrecursorPage() {
                         fontSize: "14px",
                       }}
                     >
-                      {t("learn_more")}
+                      {tPrecursor("learn_more")}
                       <span aria-hidden="true">↗</span>
                     </span>
                   </div>
