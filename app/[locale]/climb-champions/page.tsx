@@ -300,7 +300,7 @@ export default function ClimbChampionsPage() {
                   {t("join_cta")}
                 </a>
                 <a href="#why" className="btn" style={{ backgroundColor: "rgba(255, 255, 255, 0.15)", color: "white", backdropFilter: "blur(10px)" }}>
-                  What the network delivers
+                  {t("hero_delivers_btn")}
                 </a>
               </div>
             </div>
