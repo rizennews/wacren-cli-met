@@ -314,7 +314,7 @@ export default function ClimbChampionsPage() {
               <div className="reveal">
                 <div className="section-label">{t("gap_label")}</div>
                 <h2 className="section-title">{t("gap_title")}</h2>
-                <div className="teal-divider" style={{ margin: "20px 0" }}></div>
+
                 <p className="why-text">{t("gap_p1")}</p>
                 <p className="why-text">
                   {t.rich("gap_p2", {

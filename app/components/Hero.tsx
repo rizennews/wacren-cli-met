@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ScrollReveal from "@/app/components/ScrollReveal";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -46,7 +47,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Text */}
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <ScrollReveal delay={0.2} style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             
             {/* Stack texts using CSS Grid so parent height matches the tallest slide automatically */}
             <div className="grid">
@@ -109,10 +110,10 @@ export default function Hero() {
                 </svg>
               </button>
             </div>
-          </div>
+          </ScrollReveal>
           
           {/* Right Image */}
-          <div className="relative w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-2xl overflow-hidden shadow-2xl">
+          <ScrollReveal delay={0.4} className="relative w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-2xl overflow-hidden shadow-2xl">
             {slides.map((slide, i) => (
               <div 
                 key={i} 
@@ -135,7 +136,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-[var(--navy)]/40 to-transparent pointer-events-none"></div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
           
         </div>
       </div>
