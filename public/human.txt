@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: Padmore Aning
+Website: https://padmoreaning.com/
+Contact: hello@padmoreaning.com
+Role: Lead Engineer & UI/UX Architect
+
+/* SITE */
+Project: WACREN CLI-MET Platform
+URL: https://climet.wacren.net
+Language: English, French, Portuguese (Multilingual)
+Standards: HTML5, CSS3, TypeScript, Schema.org
+Technologies: Next.js, React 19, Tailwind CSS, Framer Motion, next-intl
+
+/* ATTRIBUTION & ACKNOWLEDGEMENTS */
+Organization: WACREN (West and Central African Research and Education Network)
+Programme: WACREN CLI-MET (Regional Digital Infrastructure for Climate Resilience)
+Supported By: The AfricaConnect project (https://africaconnect4.wacren.net/), co-funded by the European Union through the Global Gateway programme
+Managed By: WACREN

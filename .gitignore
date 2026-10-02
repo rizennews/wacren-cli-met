@@ -21,3 +21,4 @@ node_modules/*
 *.zip
 dev_logs.txt
 WACREN_CLIMET_website.html
+*.tsbuildinfo

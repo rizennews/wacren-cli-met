@@ -54,13 +54,13 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
           <div className="nav-actions">
             <div className="language-switcher hidden md:flex" style={{ gap: '8px', marginRight: '16px', alignItems: 'center' }}>
               <Link href={pathname} locale="en" style={{ textDecoration: 'none', opacity: locale === 'en' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="24" alt="English" style={{ borderRadius: '2px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="24" height="16" alt="English" decoding="async" style={{ borderRadius: '2px', display: 'block' }} />
               </Link>
               <Link href={pathname} locale="fr" style={{ textDecoration: 'none', opacity: locale === 'fr' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="24" alt="Français" style={{ borderRadius: '2px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="24" height="16" alt="Français" decoding="async" style={{ borderRadius: '2px', display: 'block' }} />
               </Link>
               <Link href={pathname} locale="pt" style={{ textDecoration: 'none', opacity: locale === 'pt' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="24" alt="Português" style={{ borderRadius: '2px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="24" height="16" alt="Português" decoding="async" style={{ borderRadius: '2px', display: 'block' }} />
               </Link>
             </div>
             <Link href="/contact" className="nav-cta">{t('partner')}</Link>
@@ -100,13 +100,13 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
         <div className="mobile-menu-footer">
           <div className="language-switcher-mobile" style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '16px', alignItems: 'center' }}>
               <Link href={pathname} locale="en" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'en' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="28" alt="English" style={{ borderRadius: '3px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="28" height="19" alt="English" decoding="async" style={{ borderRadius: '3px', display: 'block' }} />
               </Link>
               <Link href={pathname} locale="fr" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'fr' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="28" alt="Français" style={{ borderRadius: '3px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="28" height="19" alt="Français" decoding="async" style={{ borderRadius: '3px', display: 'block' }} />
               </Link>
               <Link href={pathname} locale="pt" onClick={closeMobileMenu} style={{ textDecoration: 'none', opacity: locale === 'pt' ? 1 : 0.4, transition: 'opacity 0.2s' }}>
-                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="28" alt="Português" style={{ borderRadius: '3px', display: 'block' }} />
+                <img src="https://flagcdn.com/w40/pt.png" srcSet="https://flagcdn.com/w80/pt.png 2x" width="28" height="19" alt="Português" decoding="async" style={{ borderRadius: '3px', display: 'block' }} />
               </Link>
           </div>
           <Link href="/contact" className="mobile-menu-cta" onClick={closeMobileMenu}>

@@ -220,25 +220,25 @@ export default function ClimbChampionsPage() {
       name: "WACREN",
       fullName: "West and Central African Research and Education Network",
       url: "https://wacren.net",
-      icon: <img src="/wacren.png" alt="WACREN" style={{ height: "90px", width: "auto", objectFit: "contain" }} />,
+      icon: <img src="/wacren.png" alt="WACREN" loading="lazy" decoding="async" style={{ height: "90px", width: "auto", objectFit: "contain" }} />,
     },
     {
       name: "GEO",
       fullName: "Group on Earth Observations",
       url: "https://earthobservations.org",
-      icon: <img src="/geo_logo_white.svg" alt="GEO" style={{ height: "55px", width: "auto", objectFit: "contain", filter: "brightness(0) opacity(0.8)" }} />,
+      icon: <img src="/geo_logo_white.svg" alt="GEO" loading="lazy" decoding="async" style={{ height: "55px", width: "auto", objectFit: "contain", filter: "brightness(0) opacity(0.8)" }} />,
     },
     {
       name: "AfriGEO",
       fullName: "African Group on Earth Observations",
       url: "https://www.afrigeo.org",
-      icon: <img src="/afrigeo.png" alt="AfriGEO" style={{ height: "80px", width: "auto", objectFit: "contain" }} />,
+      icon: <img src="/afrigeo.png" alt="AfriGEO" loading="lazy" decoding="async" style={{ height: "80px", width: "auto", objectFit: "contain" }} />,
     },
     {
       name: "WASCAL",
       fullName: "West African Science Service Centre on Climate Change",
       url: "https://wascal.org",
-      icon: <img src="/wascal.png" alt="WASCAL" style={{ height: "110px", width: "auto", objectFit: "contain" }} />,
+      icon: <img src="/wascal.png" alt="WASCAL" loading="lazy" decoding="async" style={{ height: "110px", width: "auto", objectFit: "contain" }} />,
     },
   ];
 

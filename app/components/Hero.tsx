@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -121,12 +122,17 @@ export default function Hero() {
                   zIndex: currentSlide === i ? 10 : 0
                 }}
               >
-                <img 
+                <Image 
                   src={slide.image} 
                   alt={slide.title}
+                  fill
+                  priority={i === 0}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={85}
                   className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[15000ms] ease-out ${currentSlide === i ? 'scale-110' : 'scale-100'}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--navy)]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--navy)]/40 to-transparent pointer-events-none"></div>
               </div>
             ))}
           </div>
