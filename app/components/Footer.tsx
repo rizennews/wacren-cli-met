@@ -21,7 +21,7 @@ export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
               <div className="logo-badge">CLI<br />MET</div>
               <div>
                 <div className="logo-name">WACREN</div>
-                <span className="logo-tag">CLI-MET Programme</span>
+                <span className="logo-tag">{t("logo_tag")}</span>
               </div>
             </div>
             <p className="footer-about">{t("about")}</p>
