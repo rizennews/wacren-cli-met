@@ -296,9 +296,9 @@ export default function ClimbChampionsPage() {
                 {t("hero_lead")}
               </p>
               <div className="hero-actions reveal" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <Link href="/contact" className="btn btn-primary">
+                <a href="https://indico.wacren.net/event/288/registrations/209/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   {t("join_cta")}
-                </Link>
+                </a>
                 <a href="#why" className="btn" style={{ backgroundColor: "rgba(255, 255, 255, 0.15)", color: "white", backdropFilter: "blur(10px)" }}>
                   What the network delivers
                 </a>
