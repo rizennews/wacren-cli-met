@@ -8,18 +8,18 @@ export default function Hero() {
 
   const slides = [
     {
-      title: "WACREN CLI-MET Programme",
-      description: "Building a connected, open and resilient climate ecosystem in West and Central Africa",
+      title: t("slide1_title"),
+      description: t("slide1_desc"),
       image: "/slider-image-1.jpg"
     },
     {
-      title: "WACREN-CLIMET Programme",
-      description: "Leveraging advanced digital connectivity, open science and trusted research infrastructure to support research, climate decision-making and sustainable development.",
+      title: t("slide2_title"),
+      description: t("slide2_desc"),
       image: "/slider-image-2.jpg"
     },
     {
-      title: "WACREN-CLIMET Programme",
-      description: "Infrastructure, Services and Capacity-Building",
+      title: t("slide3_title"),
+      description: t("slide3_desc"),
       image: "/slider-image-3.jpg"
     }
   ];

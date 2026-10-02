@@ -12,7 +12,13 @@
   "Hero": {
     "title": "Construindo um Ecossistema Climático <accent>Conectado</accent>, <accent>Aberto</accent> e <accent>Resiliente</accent> para a África Ocidental e Central",
     "description": "A WACREN CLI-MET utiliza conectividade digital avançada, ciência aberta e infraestruturas de pesquisa confiáveis para fortalecer a pesquisa climática, a tomada de decisões informada sobre o clima e o desenvolvimento sustentável em toda a região — posicionando as Redes de Pesquisa e Educação como facilitadores essenciais da resiliência climática.",
-    "cta": "SEJA PARCEIRO"
+    "cta": "SEJA PARCEIRO",
+    "slide1_title": "Programa WACREN CLI-MET",
+    "slide1_desc": "Construindo um ecossistema climático conectado, aberto e resiliente na África Ocidental e Central",
+    "slide2_title": "Programa WACREN-CLIMET",
+    "slide2_desc": "Aproveitando a conectividade digital avançada, ciência aberta e infraestrutura de pesquisa confiável para apoiar a pesquisa, a tomada de decisão sobre o clima e o desenvolvimento sustentável.",
+    "slide3_title": "Programa WACREN-CLIMET",
+    "slide3_desc": "Infraestrutura, Serviços e Capacitação"
   },
   "WhyItMatters": {
     "title": "WACREN CLI-MET",

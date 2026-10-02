@@ -12,7 +12,13 @@
   "Hero": {
     "title": "Building a <accent>Connected</accent>, <accent>Open</accent>, and <accent>Resilient</accent> Climate Ecosystem for West and Central Africa",
     "description": "WACREN CLI-MET leverages advanced digital connectivity, open science, and trusted research infrastructure to strengthen climate research, climate-informed decision-making, and sustainable development across the region — positioning Research and Education Networks as critical enablers of climate resilience.",
-    "cta": "PARTNER WITH US"
+    "cta": "PARTNER WITH US",
+    "slide1_title": "WACREN CLI-MET Programme",
+    "slide1_desc": "Building a connected, open and resilient climate ecosystem in West and Central Africa",
+    "slide2_title": "WACREN-CLIMET Programme",
+    "slide2_desc": "Leveraging advanced digital connectivity, open science and trusted research infrastructure to support research, climate decision-making and sustainable development.",
+    "slide3_title": "WACREN-CLIMET Programme",
+    "slide3_desc": "Infrastructure, Services and Capacity-Building"
   },
   "WhyItMatters": {
     "title": "WACREN CLI-MET",
