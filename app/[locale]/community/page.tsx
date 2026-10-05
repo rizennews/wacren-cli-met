@@ -98,7 +98,7 @@ export default function CommunityPage() {
         setMobileMenuOpen={setMobileMenuOpen} 
       />
       
-      <main className="pb-20">
+      <main style={{ paddingBottom: "120px" }}>
         {/* Community Hero */}
         <div className="hero" style={{ minHeight: "auto", display: "flex", alignItems: "center", paddingTop: "120px", paddingBottom: "40px" }}>
           <div className="hero-canvas"></div>
@@ -122,14 +122,19 @@ export default function CommunityPage() {
             {t("section_lead")}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="pillars-grid">
             {beneficiaries.map((b, i) => (
-              <div key={i} className="beneficiary-card p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                  {b.icon}
+              <div key={i} className={`pillar-card p${(i % 5) + 1} reveal`}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <div className="pillar-icon">
+                    {b.icon}
+                  </div>
+                  <div className="pillar-num">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 leading-tight">{b.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{b.desc}</p>
+                <h3 className="pillar-title">{b.title}</h3>
+                <p style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>{b.desc}</p>
               </div>
             ))}
           </div>

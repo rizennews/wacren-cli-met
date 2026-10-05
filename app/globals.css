@@ -796,7 +796,7 @@ section { padding: 72px 0; }
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
 }
@@ -1491,7 +1491,8 @@ footer {
   .sdgs-layout { flex-direction: column !important; gap: 40px !important; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
   section { padding: 60px 0; }
-  .container { padding: 0 20px; }
+  .container { padding: 0 28px; }
+  .hero-content { padding-left: 28px; padding-right: 28px; }
 
   .nav-cta { display: none !important; }
 }
