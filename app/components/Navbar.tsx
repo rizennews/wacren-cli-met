@@ -33,8 +33,8 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }: NavbarProp
       <div className="header-outer">
         <header>
           {/* Logo */}
-          <Link href="/" className="logo-block">
-            <div className="logo-badge">CLI<br />MET</div>
+          <Link href="/" className="logo-block" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src="/wacren.png" alt="WACREN Logo" style={{ height: "64px", width: "auto", objectFit: "contain" }} />
             <div className="logo-text-wrap">
               <span className="logo-name">WACREN</span>
               <span className="logo-tag">CLI-MET</span>

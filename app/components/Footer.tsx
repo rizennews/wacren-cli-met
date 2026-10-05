@@ -17,8 +17,8 @@ export default function Footer({ backToTopVisible, scrollToTop }: FooterProps) {
       <footer id="contact">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="logo-block" style={{ marginBottom: "0" }}>
-              <div className="logo-badge">CLI<br />MET</div>
+            <div className="logo-block" style={{ marginBottom: "0", display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img src="/wacren.png" alt="WACREN Logo" style={{ height: "64px", width: "auto", objectFit: "contain" }} />
               <div>
                 <div className="logo-name">WACREN</div>
                 <span className="logo-tag">{t("logo_tag")}</span>

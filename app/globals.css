@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --navy:    #004A99; /* Changed to Deep Sea Blue */
@@ -102,7 +100,7 @@ header {
 
 .logo-name {
   font-family: var(--font-outfit), sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.8px;
@@ -112,7 +110,7 @@ header {
 
 .logo-tag {
   font-family: var(--font-outfit), sans-serif;
-  font-size: 8px;
+  font-size: 6px;
   color: var(--gold);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -2004,7 +2002,7 @@ footer {
   transform: translateY(-1px);
 }
 
-/* ─── ABOUT W-CCN LAUNCH CARD ─── */
+/* ─── ABOUT WACREN CLIMB LAUNCH CARD ─── */
 .about-launch-card {
   background: #003875;
   border-radius: 20px;
