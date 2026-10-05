@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
@@ -163,6 +163,12 @@ export async function generateMetadata({
   };
 }
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default async function RootLayout({
   children,
   params,
@@ -301,8 +307,9 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={locale} className={`${outfit.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${outfit.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="author" href="/humans.txt" />
         <meta name="DC.title" content={content.title} />
         <meta name="DC.creator" content="Padmore Aning" />
@@ -315,7 +322,6 @@ export default async function RootLayout({
         {/* Priority Hints & Performance Optimization */}
         <link rel="preconnect" href="https://flagcdn.com" />
         <link rel="dns-prefetch" href="https://flagcdn.com" />
-        <link rel="preload" as="image" href="/slider-image-1.jpg" fetchPriority="high" />
       </head>
       <body suppressHydrationWarning>
         <DeveloperFootprint />

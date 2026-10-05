@@ -310,7 +310,7 @@ export default function ClimbChampionsPage() {
         {/* SECTION 1: CLOSING THE GAP */}
         <section id="why" style={{ background: "white" }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "36px", alignItems: "center" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "36px", alignItems: "center" }}>
               <div className="reveal">
                 <h2 className="section-title">{t("gap_title")}</h2>
 
@@ -445,7 +445,7 @@ export default function ClimbChampionsPage() {
             <h2 className="section-title">{t("infra_title")}</h2>
             <p className="section-lead">{t("infra_lead")}</p>
 
-            <div className="challenge-cards reveal" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+            <div className="challenge-cards reveal" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
               {infrastructure.map((item, idx) => (
                 <div key={idx} className="challenge-card">
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -509,7 +509,7 @@ export default function ClimbChampionsPage() {
             <h2 className="section-title">{t("align_title")}</h2>
             <p className="section-lead">{t("align_lead")}</p>
 
-            <div className="au-grid reveal" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+            <div className="au-grid reveal" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
               {alignments.map((a, idx) => (
                 <div key={idx} className="au-card">
                   <div className="au-card-icon">
